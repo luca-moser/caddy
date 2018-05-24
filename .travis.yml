@@ -7,9 +7,9 @@ matrix:
       go: "1.10.2"
       env: VER=linux-win
       before_install:
-        - go get ./...
+        - go get github.com/luca-moser/caddy-iri-attach
       script:
-        - cd caddy
+        - mv $HOME/gopath/src/github.com/luca-moser $HOME/gopath/src/github.com/mholt
         - CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go build -v -o caddy-iri-$TRAVIS_TAG-linux64
         - md5sum caddy-iri-$TRAVIS_TAG-linux64
         - ls
