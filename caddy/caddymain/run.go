@@ -37,7 +37,7 @@ import (
 
 	_ "github.com/mholt/caddy/caddyhttp" // plug in the HTTP server type
 	// This is where other plugins get plugged in (imported)
-	_ "github.com/luca-moser/attach"
+	_ "github.com/luca-moser/caddy-iri-attach"
 )
 
 func init() {
