@@ -36,9 +36,6 @@ import (
 	"log"
 	"os"
 	"os/exec"
-	"path/filepath"
-
-	"github.com/caddyserver/builds"
 )
 
 var goos, goarch, goarm string
@@ -54,25 +51,16 @@ func main() {
 
 	gopath := os.Getenv("GOPATH")
 
-	pwd, err := os.Getwd()
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	ldflags, err := builds.MakeLdFlags(filepath.Join(pwd, ".."))
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	args := []string{"build", "-ldflags", ldflags}
+	args := []string{"build", "-ldflags", "-s -w"}
 	args = append(args, "-asmflags", fmt.Sprintf("-trimpath=%s", gopath))
 	args = append(args, "-gcflags", fmt.Sprintf("-trimpath=%s", gopath))
+	args = append(args, "--tags", "c_pow sse_pow")
 	cmd := exec.Command("go", args...)
 	cmd.Stderr = os.Stderr
 	cmd.Stdout = os.Stdout
 	cmd.Env = os.Environ()
 	for _, env := range []string{
-		"CGO_ENABLED=0",
+		"CGO_ENABLED=1",
 		"GOOS=" + goos,
 		"GOARCH=" + goarch,
 		"GOARM=" + goarm,
@@ -80,7 +68,7 @@ func main() {
 		cmd.Env = append(cmd.Env, env)
 	}
 
-	err = cmd.Run()
+	err := cmd.Run()
 	if err != nil {
 		log.Fatal(err)
 	}

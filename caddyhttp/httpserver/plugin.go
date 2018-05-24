@@ -612,6 +612,7 @@ var directives = []string{
 	"rewrite",
 	"ext",
 	"gzip",
+	"attach",
 	"header",
 	"geoip", // github.com/kodnaplakal/caddy-geoip
 	"errors",

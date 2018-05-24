@@ -5,6 +5,7 @@ Vagrantfile
 .vagrant/
 /.idea
 
+caddy/caddy.exe
 dist/builds/
 dist/release/
 
