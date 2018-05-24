@@ -8,11 +8,11 @@ matrix:
       env: VER=linux-win
       before_install:
         - go get github.com/luca-moser/caddy-iri-attach
-      script:
         - cd ../.. && mv luca-moser mholt
+      script:
         - cd mholt/caddy/caddy
-        - CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go build -o caddy-iri-$TRAVIS_TAG-linux64
-        - md5sum caddy-iri-$TRAVIS_TAG-linux64
+        - CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go run build.go
+        - md5sum caddy
         - ls
       after_script:
         - cd .. #change back to root
