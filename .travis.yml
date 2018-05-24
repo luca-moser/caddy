@@ -9,8 +9,9 @@ matrix:
       before_install:
         - go get github.com/luca-moser/caddy-iri-attach
       script:
-        - mv $HOME/gopath/src/github.com/luca-moser $HOME/gopath/src/github.com/mholt
-        - CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go build -v -o caddy-iri-$TRAVIS_TAG-linux64
+        - cd ../.. && mv luca-moser mholt
+        - cd mholt/caddy/caddy
+        - CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go build -o caddy-iri-$TRAVIS_TAG-linux64
         - md5sum caddy-iri-$TRAVIS_TAG-linux64
         - ls
       after_script:
