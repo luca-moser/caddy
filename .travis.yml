@@ -25,5 +25,5 @@ deploy:
     file:
       - caddy/caddy
     skip_cleanup: true
-  on:
-    branch: master
+    on:
+      branch: master
