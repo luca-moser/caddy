@@ -9,7 +9,7 @@ matrix:
       before_install:
         - go get github.com/luca-moser/caddy-iri-attach
         - cd ../.. && mv luca-moser mholt
-      script:
+      install:
         - cd mholt/caddy/caddy
         - CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go run build.go
         - md5sum caddy
