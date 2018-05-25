@@ -8,6 +8,7 @@ matrix:
       env: VER=linux-win
       before_install:
         - go get github.com/luca-moser/caddy-iri-attach
+        - go get github.com/caddyserver/builds
         - cd ../.. && mv luca-moser mholt
       install:
         - cd mholt/caddy     
