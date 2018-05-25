@@ -20,9 +20,6 @@ matrix:
         - md5sum caddy
         - cd .. 
         - ls
-        - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-        - docker build -t $DOCKER_REPO:latest .
-        - docker push $DOCKER_REPO:latest
 
 deploy:
   - provider: releases
