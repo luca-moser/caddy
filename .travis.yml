@@ -1,7 +1,6 @@
 env:
   - VER=linux-win
 
-# neo
 matrix:
   include:
     - language: go
