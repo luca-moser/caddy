@@ -5,7 +5,7 @@ MAINTAINER Luca Moser
 RUN mkdir -p /app
 
 # copy app
-COPY caddy/caddy /app
+COPY ./caddy/caddy /app
 
 WORKDIR /app
 ENTRYPOINT ["/app/caddy"]
