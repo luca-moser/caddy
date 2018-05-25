@@ -12,11 +12,9 @@ matrix:
         - cd ../.. && mv luca-moser mholt
       install:
         - cd mholt/caddy     
-        - go get -v ./...
         - cd caddy
         - CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go run build.go
         - md5sum caddy
-        - ls
         - cd .. 
         - ls
         - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
