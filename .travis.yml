@@ -1,11 +1,10 @@
 env:
   - VER=linux-win
-  
+
 matrix:
   include:
     - language: go
       go: "1.10.2"
-      env: VER=linux-win
       install:
         - ls      
         - go get github.com/luca-moser/caddy-iri-attach
@@ -24,3 +23,10 @@ matrix:
         - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
         - docker build -t $DOCKER_REPO:latest .
         - docker push $DOCKER_REPO:latest
+
+deploy:
+  - provider: releases
+    api_key: $GITHUB_OAUTH_TOKEN
+    file:
+      - caddy/caddy
+    skip_cleanup: true
