@@ -6,15 +6,13 @@ matrix:
     - language: go
       go: "1.10.2"
       env: VER=linux-win
-      before_install:
+      install:
         - ls      
         - go get github.com/luca-moser/caddy-iri-attach
         - go get github.com/caddyserver/builds
         - ls              
-        - cd ../.. && mv luca-moser mholt
-      install:
-        - cd mholt/caddy     
-        - cd caddy
+        - cd ../.. && mv luca-moser mholt      
+        - cd mholt/caddy/caddy     
         - CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go run build.go
         - md5sum caddy
         - cd .. 
