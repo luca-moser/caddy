@@ -1,6 +1,5 @@
 env:
   - VER=linux-win
-  - DOCKER_REPO=lucamoser/caddy-iri
   
 matrix:
   include:
