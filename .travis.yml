@@ -18,7 +18,8 @@ matrix:
         - md5sum caddy
         - ls
       after_script:
-        - cd .. #change back to root
+        - cd .. 
+        - ls
         - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
         - docker build -t $DOCKER_REPO:latest .
         - docker push $DOCKER_REPO:latest
