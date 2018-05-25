@@ -17,7 +17,6 @@ matrix:
         - CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go run build.go
         - md5sum caddy
         - ls
-      after_script:
         - cd .. 
         - ls
         - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
