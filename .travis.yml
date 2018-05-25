@@ -10,9 +10,11 @@ matrix:
         - ls      
         - go get github.com/luca-moser/caddy-iri-attach
         - go get github.com/caddyserver/builds
-        - ls              
+        - ls
         - cd ../.. && mv luca-moser mholt      
-        - cd mholt/caddy/caddy     
+        - cd mholt/caddy
+        - ls        
+        - cd caddy        
         - CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go run build.go
         - md5sum caddy
         - cd .. 
