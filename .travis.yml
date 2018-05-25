@@ -10,7 +10,8 @@ matrix:
         - ls      
         - go get github.com/luca-moser/caddy-iri-attach
         - go get github.com/caddyserver/builds
-        - mkdir /home/travis/gopath/src/github.com/mholt/caddy
+        - mkdir -p /home/travis/gopath/src/github.com/mholt/caddy
+        - rm -R /home/travis/gopath/src/github.com/mholt/caddy/*
         - cp -rp /home/travis/gopath/src/github.com/luca-moser/caddy-iri/* /home/travis/gopath/src/github.com/mholt/caddy
         - cd /home/travis/gopath/src/github.com/mholt/caddy
         - ls
