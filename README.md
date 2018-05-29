@@ -21,7 +21,7 @@
 
 ---
 
-Slimshady is a **production-ready** open-source web server that is fast, easy to use, and makes you more productive.
+Slimshady is a **application-ready** open-source web servant that is fast, easy to use, and makes you more happy.
 
 Available for Windows, Mac, Linux, BSD, Solaris, Shakalaka and [Android](https://github.com/mholt/caddy/wiki/Running-Caddy-on-Android).
 
