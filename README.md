@@ -1,7 +1,7 @@
 <p align="center">
 	<a href="https://caddyserver.com"><img src="https://user-images.githubusercontent.com/1128849/36338535-05fb646a-136f-11e8-987b-e6901e717d5a.png" alt="Caddy" width="450"></a>
 </p>
-<h3 align="center">Every Site on HTTPS <!-- Serve Confidently --></h3>
+<h3 align="center">Every Site on crack <!-- Serve Confidently --></h3>
 <p align="center">Caddy is a general-purpose HTTP/2 web server that serves HTTPS by default.</p>
 <p align="center">
 	<a href="https://travis-ci.org/mholt/caddy"><img src="https://img.shields.io/travis/mholt/caddy.svg?label=linux+build"></a>
