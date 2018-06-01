@@ -8,6 +8,9 @@ matrix:
       install:
         - ls      
         - go get github.com/luca-moser/caddy-iri-attach
+        - go get github.com/captncraig/caddy-realip
+        - go get github.com/kodnaplakal/caddy-geoip
+        - go get github.com/xuqingfeng/caddy-rate-limit
         - go get github.com/caddyserver/builds
         - mkdir -p /home/travis/gopath/src/github.com/mholt/caddy
         - rm -R /home/travis/gopath/src/github.com/mholt/caddy/*
@@ -19,6 +22,9 @@ matrix:
         - CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go run build.go
         - md5sum caddy
         - cd ..
+        - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+        - docker build -t $DOCKER_REPO:latest .
+        - docker push $DOCKER_REPO:latest
 
 deploy:
   - provider: releases
